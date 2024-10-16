@@ -97,10 +97,9 @@
     cursor: pointer;
     width: 100px;
     margin: 10px;
-    color: #0a0a23;
+    color: white;
     font-size: 18px;
-    background-color: #ffffff;
-    background-image: linear-gradient(#ffffff, #928d86);
+    background-color: black;
     border-color: #ffffff;
     border-width: 3px;
   }
@@ -109,6 +108,9 @@
     overflow-y: auto;
     height: 265px;
     width: 100%;
+    text-align: center;
+    line-height: 2.8;
+    padding: 0.6rem;
   }
   
   .results-text {
