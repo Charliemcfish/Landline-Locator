@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0;
     padding: 0;
@@ -31,13 +33,15 @@
     margin-bottom: 20px;
   }
   
-  h1 {
+  h1, h2 {
     color: white;
     width: 100%;
-    max-width: 480px;
+    max-width: 600px;
     margin: 15px 0;
     text-align: var(--center-text);
+    margin-bottom: 1rem;
   }
+  
   
   .phone-container {
     position: relative;
@@ -119,4 +123,19 @@
     text-align: var(--center-text);
     margin: 10px 0;
   }
+
+  .container {
+    margin-bottom: 1rem;
+  }
   
+  .example-numbers li {
+    list-style-type: none;
+    text-align: center;
+    color: white;
+  }
+
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #9595b3;
+  }

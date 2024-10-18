@@ -2,11 +2,11 @@ document.getElementById("check-btn").addEventListener("click", function () {
   const userInput = document.getElementById("user-input").value;
   const resultsDiv = document.getElementById("results-div");
 
-  // Regular expressions for UK landline and mobile numbers
-  const landlinePattern = /^(?:01|02)\d{8,9}$/; // Landline (e.g., 020 7946 0958, 0117 496 0123)
-  const mobilePattern = /^07\d{9}$/; // Mobile (e.g., 07400 123456, 07900 123456)
+  
+  const landlinePattern = /^(?:01|02)\d{8,9}$/; 
+  const mobilePattern = /^07\d{9}$/; 
 
-  // Extended area code mapping to regions
+  
   const areaCodes = {
     '020': 'London',
     '0117': 'Bristol',
@@ -113,28 +113,30 @@ document.getElementById("check-btn").addEventListener("click", function () {
     '0151': 'Liverpool',
     '01642': 'Teesside',
     '01865': 'Oxford',
-    // More area codes can be added
+    
   };
 
-  // Check if input is empty
+
   if (userInput.trim() === "") {
     alert("Please provide a phone number");
     return;
   }
 
-  // Clean the input by removing spaces and dashes
+  
   const cleanedInput = userInput.replace(/[\s-]/g, "");
 
-  // Check if it matches landline or mobile pattern
+  
   if (landlinePattern.test(cleanedInput)) {
-    // Extract area code
-    const areaCode = cleanedInput.substring(0, 5); // Get first 4 digits for checking
-    let region = "Unknown region"; // Default if area code not found
+   
+    const areaCode = cleanedInput.substring(0, 5); 
+    let region = "Unknown region"; 
 
-    // Check if the first 4 digits match an area code
-    if (areaCodes[areaCode]) {
-      region = areaCodes[areaCode];
+    
+    if (areaCodes[cleanedInput.substring(0, 5)]) {
+      region = areaCodes[cleanedInput.substring(0, 5)];
     } else if (areaCodes[cleanedInput.substring(0, 4)]) {
+      region = areaCodes[cleanedInput.substring(0, 4)];
+    } else if (areaCodes[cleanedInput.substring(0, 3)]) {
       region = areaCodes[cleanedInput.substring(0, 3)];
     } else if (areaCodes[cleanedInput.substring(0, 2)]) {
       region = areaCodes[cleanedInput.substring(0, 2)];
@@ -149,7 +151,7 @@ document.getElementById("check-btn").addEventListener("click", function () {
 });
 
 document.getElementById("clear-btn").addEventListener("click", function () {
-  // Clear the results-div content and the input field
+  
   document.getElementById("results-div").textContent = "";
   document.getElementById("user-input").value = "";
 });
